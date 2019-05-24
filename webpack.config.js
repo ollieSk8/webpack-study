@@ -4,10 +4,12 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     mode: 'development',
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        port: 8000,
-        hot: true
+        //contentBase: path.join(__dirname, 'dist'),
+        port: 8003,
+        hot: true,
+        open: 'google-chrome'
     },
+    devtool: 'inline-source-map',
     entry: './main.js',
     output: {
         // 把所有依赖的模块合并输出到一个 bundle.js 文件
@@ -26,6 +28,16 @@ module.exports = {
                     },
                     'css-loader'
                 ]
+            },
+            {
+                test: /\.m?js$/,
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
             }
         ]
     },
