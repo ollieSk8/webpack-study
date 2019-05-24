@@ -14,7 +14,7 @@
     "webpack-dev-server": "^3.4.1"
   },
   "scripts": {
-    "base": "webpack-dev-server --config webpack.base.config.js"
+    "start": "webpack-dev-server --config webpack.config.js"
   },
   "author": "",
   "license": "ISC"
