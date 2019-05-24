@@ -5,15 +5,16 @@ module.exports = {
     mode: 'development',
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
-        port: 8000,
+        port: 8001,
         hot: true
     },
     entry: './main.js',
+    devtool: 'inline-source-map',
     output: {
         // 把所有依赖的模块合并输出到一个 bundle.js 文件
         filename: 'bundle.js',
         // 输出文件都放到 dist 目录下
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, 'dist')
     },
     module: {
         rules: [
